@@ -16,7 +16,7 @@ namespace QLSV_Gp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ListL());
+            Application.Run(new HomePage());
         }
     }
 }

@@ -18,7 +18,7 @@ namespace QLSV_Gp
         {
             InitializeComponent();
         }
-        string connectionString = @"Data Source=DESKTOP-09B6QVM;Initial Catalog=QLSV; Integrated security = True";
+        string connectionString = @"Data Source=DESKTOP-09B6QVM\MSSQLSERVER2024;Initial Catalog=QLSV; Integrated security = True";
 
         private void AddL_Load(object sender, EventArgs e)
         {
