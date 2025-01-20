@@ -1,17 +1,19 @@
-﻿using OfficeOpenXml;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using OfficeOpenXml;
 
 namespace QLSV_Gp
 {
     public partial class AddGV : Form
     {
-        string connectionString = @"Data Source=DESKTOP-09B6QVM;Initial Catalog=QLSV;Integrated Security=True";
+        string connectionString = @"Data Source=DESKTOP-09B6QVM\MSSQLSERVER2024;Initial Catalog=QLSV;Integrated Security=True";
+
         string filePath = "";
+
 
 
         public AddGV()
@@ -19,65 +21,7 @@ namespace QLSV_Gp
             InitializeComponent();
         }
 
-        private void btn_browse_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
-            openFileDialog.Title = "Chọn file Excel";
-
-
-            OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                filePath = openFileDialog.FileName;
-                try
-                {
-                    using (ExcelPackage package = new ExcelPackage(new FileInfo(filePath)))
-                    {
-                        ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
-                        DataTable dt = new DataTable();
-
-                        // Xác định số cột bằng cách kiểm tra từng ô trong hàng đầu tiên
-                        int lastColumn = 1;
-                        for (int col = 1; col <= worksheet.Dimension.End.Column; col++)
-                        {
-                            if (string.IsNullOrEmpty(worksheet.Cells[1, col].Text))
-                            {
-                                break;
-                            }
-                            lastColumn = col;
-                        }
-
-                        // Đọc tên cột
-                        foreach (var firstRowCell in worksheet.Cells[1, 1, 1, lastColumn])
-                        {
-                            dt.Columns.Add(firstRowCell.Text);
-                        }
-
-                        // Đọc dữ liệu
-                        for (var rowNumber = 2; rowNumber <= worksheet.Dimension.End.Row; rowNumber++)
-                        {
-                            var row = worksheet.Cells[rowNumber, 1, rowNumber, lastColumn];
-                            DataRow newRow = dt.NewRow();
-                            foreach (var cell in row)
-                            {
-                                newRow[cell.Start.Column - 1] = cell.Text;
-                            }
-                            dt.Rows.Add(newRow);
-                        }
-
-                        dgv_addGV.DataSource = dt;
-                        bindingSource.DataSource = dt;
-                        dgv_addGV.DataSource = bindingSource;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi khi đọc file Excel: " + ex.Message);
-                }
-            }
-        }
+        
 
         private void txt_find_Enter(object sender, EventArgs e)
         {
@@ -113,6 +57,115 @@ namespace QLSV_Gp
                 // Xóa filter của BindingSource để hiển thị tất cả giảng viên
                 bindingSource.Filter = null;
             }
+        }
+        int slGV = 0;
+        private void btn_browse_Click(object sender, EventArgs e)
+        {
+            // Mở hộp thoại chọn file Excel
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+            openFileDialog.Title = "Chọn file Excel";
+            OfficeOpenXml.ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+
+                try
+                {
+                    // Đọc dữ liệu từ file Excel
+                    DataTable dt = ReadExcelFile(filePath);
+
+
+                    // Thêm dữ liệu vào dgv_addGV
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        // Tăng số lượng giảng viên và tạo MaGV
+                        slGV++;
+                        string maGV = "25" + slGV.ToString();
+
+                        // Thêm một dòng mới vào dgv_addGV
+                        dgv_addGV.Rows.Add(maGV, row["HoTen"], row["GioiTinh"], row["DienThoai"], row["Email"]);
+                    }
+                    slGV++;
+                    txt_maGV.Text = "25" + slGV.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+            }
+        }
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string gioiTinh = cb_nam.Checked ? "Nam" : "Nữ";
+
+                dgv_addGV.Rows.Add(txt_maGV.Text, txt_hoTen.Text, gioiTinh, txt_dienThoai.Text, txt_email.Text);
+                slGV ++;
+                txt_maGV.Text = "25" + slGV.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+        // Hàm đọc dữ liệu từ file Excel
+        private DataTable ReadExcelFile(string filePath)
+        {
+            DataTable dt = new DataTable();
+
+
+            // Sử dụng thư viện EPPlus để đọc file Excel
+            using (var package = new OfficeOpenXml.ExcelPackage(new FileInfo(filePath)))
+            {
+                ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+
+                // Đọc tên cột
+                foreach (var firstRowCell in worksheet.Cells[1, 1, 1, worksheet.Dimension.End.Column])
+                {
+                    dt.Columns.Add(firstRowCell.Text);
+                }
+
+                // Đọc dữ liệu
+                for (int rowNumber = 2; rowNumber <= worksheet.Dimension.End.Row; rowNumber++)
+                {
+                    var row = worksheet.Cells[rowNumber, 1, rowNumber, worksheet.Dimension.End.Column];
+                    DataRow newRow = dt.NewRow();
+                    foreach (var cell in row)
+                    {
+                        newRow[cell.Start.Column - 1] = cell.Text;
+                    }
+                    dt.Rows.Add(newRow);
+                }
+            }
+
+            return dt;
+        }
+
+        // Hàm lấy số lượng giảng viên từ database
+        private int LaySoLuongGiangVien()
+        {
+            int soLuongGV = 0;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT COUNT(*) FROM GIANG_VIEN";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    soLuongGV = (int)command.ExecuteScalar();
+                    this.slGV = soLuongGV;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+            }
+            return soLuongGV;
         }
         private void btn_save_Click(object sender, EventArgs e)
         {
@@ -196,12 +249,42 @@ namespace QLSV_Gp
                 dgv_addGV.Rows.Remove(row); // Xóa row trực tiếp từ DataGridView
             }
         }
+       
+        private void cb_nam_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_nam.Checked)
+            {
+                cb_nu.Checked = false;
+            }
+        }
+
+        private void cb_nu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_nu.Checked)
+            {
+                cb_nam.Checked = false;
+            }
+        }
 
         private void AddGV_Load(object sender, EventArgs e)
         {
+            dgv_addGV.Columns.Add("MaGV", "Mã GV");
+            dgv_addGV.Columns.Add("HoTen", "Họ Tên");
+            dgv_addGV.Columns.Add("GioiTinh", "Giới Tính");
+            dgv_addGV.Columns.Add("DienThoai", "Điện Thoại");
+            dgv_addGV.Columns.Add("Email", "Email");
+
+            // Thêm các thuộc tính tùy chỉnh cho các cột nếu cần (ví dụ: chiều rộng, căn chỉnh,...)
+            dgv_addGV.Columns["MaGV"].Width = 120;
+            dgv_addGV.Columns["HoTen"].Width = 135;
+            dgv_addGV.Columns["DienThoai"].Width = 120;
+            dgv_addGV.Columns["Email"].Width = 120;
+            dgv_addGV.Columns["GioiTinh"].Width = 120;
             txt_find.Text = "Tìm kiếm theo tên, MaGV";
             txt_find.ForeColor = Color.Gray; // Đổi màu chữ thành xám
             txt_find.Font = new Font(txt_find.Font.FontFamily, 10, FontStyle.Italic);
+            LaySoLuongGiangVien();
+            txt_maGV.Text = "25" + slGV.ToString();
         }
     }
 }

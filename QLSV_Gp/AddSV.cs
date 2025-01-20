@@ -10,7 +10,7 @@ namespace QLSV_Gp
 {
     public partial class AddSV : Form
     {
-        string connectionString = @"Data Source=DESKTOP-09B6QVM;Initial Catalog=QLSV;Integrated Security=True";
+        string connectionString = @"Data Source=DESKTOP-09B6QVM\MSSQLSERVER2024;Initial Catalog=QLSV;Integrated Security=True";
         string filePath = "";
 
 
