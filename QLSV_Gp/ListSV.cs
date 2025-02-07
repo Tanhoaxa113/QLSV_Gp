@@ -136,8 +136,9 @@ namespace QLSV_Gp
             if (dg_dsSinhVien.SelectedRows.Count > 0)
             {
                 string MaSV = dg_dsSinhVien.SelectedRows[0].Cells["MaSV"].Value.ToString();
-                EditGV changeInfo = new EditGV(MaSV);
-                changeInfo.ShowDialog();
+                EditSV changeInfo = new EditSV(MaSV);
+                changeInfo.Show();
+                this.Hide();
             }
         }
         // Sự kiện Click của xóaToolStripMenuItem
