@@ -41,7 +41,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(115, 9);
+            this.label1.Location = new System.Drawing.Point(196, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(226, 31);
             this.label1.TabIndex = 0;
@@ -98,7 +98,7 @@
             this.Controls.Add(this.txt_wel);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "EditL";
             this.Text = "EditL";
             this.Load += new System.EventHandler(this.EditL_Load);

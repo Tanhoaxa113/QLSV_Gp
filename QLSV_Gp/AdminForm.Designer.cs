@@ -32,7 +32,7 @@
             this.xemDanhSáchGiảngViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_listL = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.danhSáchMônToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mns_dsMon = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.danhSáchSinhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -80,7 +80,7 @@
             this.xemDanhSáchGiảngViênToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mn_listL,
             this.toolStripSeparator1,
-            this.danhSáchMônToolStripMenuItem,
+            this.mns_dsMon,
             this.toolStripSeparator2,
             this.danhSáchSinhViênToolStripMenuItem,
             this.toolStripSeparator3,
@@ -102,13 +102,13 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(245, 6);
             // 
-            // danhSáchMônToolStripMenuItem
+            // mns_dsMon
             // 
-            this.danhSáchMônToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
-            this.danhSáchMônToolStripMenuItem.Name = "danhSáchMônToolStripMenuItem";
-            this.danhSáchMônToolStripMenuItem.Size = new System.Drawing.Size(248, 26);
-            this.danhSáchMônToolStripMenuItem.Text = "Danh Sách Môn";
-            this.danhSáchMônToolStripMenuItem.Click += new System.EventHandler(this.mn_dsMon_Click);
+            this.mns_dsMon.ForeColor = System.Drawing.Color.Red;
+            this.mns_dsMon.Name = "mns_dsMon";
+            this.mns_dsMon.Size = new System.Drawing.Size(248, 26);
+            this.mns_dsMon.Text = "Danh Sách Môn";
+            this.mns_dsMon.Click += new System.EventHandler(this.mn_dsMon_Click);
             // 
             // toolStripSeparator2
             // 
@@ -346,7 +346,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem xemDanhSáchGiảngViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mn_listL;
-        private System.Windows.Forms.ToolStripMenuItem danhSáchMônToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mns_dsMon;
         private System.Windows.Forms.ToolStripMenuItem danhSáchSinhViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mn_dsGiangVien;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

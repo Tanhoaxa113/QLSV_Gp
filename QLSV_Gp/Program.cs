@@ -17,7 +17,7 @@ namespace QLSV_Gp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new ListSV());
+            Application.Run(new AdminForm());
 
 
         }

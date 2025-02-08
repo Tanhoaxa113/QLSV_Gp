@@ -80,7 +80,8 @@ namespace QLSV_Gp
 
         private void mn_dsMon_Click(object sender, EventArgs e)
         {
-
+            ListM listM = new ListM();
+            listM.ShowDialog();
         }
     }
 }
