@@ -77,13 +77,13 @@ namespace QLSV_Gp
                     {
                         // Tăng số lượng giảng viên và tạo MaGV
                         slGV++;
-                        string maGV = "25" + slGV.ToString();
+                        string maGV = "2500" + slGV.ToString();
 
                         // Thêm một dòng mới vào dgv_addGV
                         dgv_addGV.Rows.Add(maGV, row["HoTen"], row["GioiTinh"], row["DienThoai"], row["Email"]);
                     }
                     slGV++;
-                    txt_maGV.Text = "25" + slGV.ToString();
+                    txt_maGV.Text = "2500" + slGV.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -99,7 +99,7 @@ namespace QLSV_Gp
 
                 dgv_addGV.Rows.Add(txt_maGV.Text, txt_hoTen.Text, gioiTinh, txt_dienThoai.Text, txt_email.Text);
                 slGV ++;
-                txt_maGV.Text = "25" + slGV.ToString();
+                txt_maGV.Text = "2500" + slGV.ToString();
             }
             catch (Exception ex)
             {
@@ -277,7 +277,7 @@ namespace QLSV_Gp
             txt_find.ForeColor = Color.Gray; // Đổi màu chữ thành xám
             txt_find.Font = new Font(txt_find.Font.FontFamily, 10, FontStyle.Italic);
             LaySoLuongGiangVien();
-            txt_maGV.Text = "25" + slGV.ToString();
+            txt_maGV.Text = "250000" + slGV.ToString();
         }
     }
 }

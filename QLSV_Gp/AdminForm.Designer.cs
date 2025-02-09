@@ -37,11 +37,6 @@
             this.danhSáchSinhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mn_dsGiangVien = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.xemĐiểmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xemĐiểmTheoLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.xemĐiểmTheoMônToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mn_addL = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,10 +51,12 @@
             this.lb_dhnamcantho = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.xemBảngĐiểmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
-            this.menuStrip2.SuspendLayout();
             this.menuStrip3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -71,7 +68,7 @@
             this.xemDanhSáchGiảngViênToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(10, 200);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(271, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(151, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -136,48 +133,6 @@
             this.mn_dsGiangVien.Text = "Danh Sách Giảng Viên";
             this.mn_dsGiangVien.Click += new System.EventHandler(this.mn_dsGiangVien_Click);
             // 
-            // menuStrip2
-            // 
-            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xemĐiểmToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(10, 250);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(110, 29);
-            this.menuStrip2.TabIndex = 0;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
-            // xemĐiểmToolStripMenuItem
-            // 
-            this.xemĐiểmToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xemĐiểmTheoLớpToolStripMenuItem,
-            this.toolStripSeparator4,
-            this.xemĐiểmTheoMônToolStripMenuItem});
-            this.xemĐiểmToolStripMenuItem.Name = "xemĐiểmToolStripMenuItem";
-            this.xemĐiểmToolStripMenuItem.Size = new System.Drawing.Size(102, 25);
-            this.xemĐiểmToolStripMenuItem.Text = "Xem Điểm";
-            // 
-            // xemĐiểmTheoLớpToolStripMenuItem
-            // 
-            this.xemĐiểmTheoLớpToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
-            this.xemĐiểmTheoLớpToolStripMenuItem.Name = "xemĐiểmTheoLớpToolStripMenuItem";
-            this.xemĐiểmTheoLớpToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
-            this.xemĐiểmTheoLớpToolStripMenuItem.Text = "Theo Lớp";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(156, 6);
-            // 
-            // xemĐiểmTheoMônToolStripMenuItem
-            // 
-            this.xemĐiểmTheoMônToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
-            this.xemĐiểmTheoMônToolStripMenuItem.Name = "xemĐiểmTheoMônToolStripMenuItem";
-            this.xemĐiểmTheoMônToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
-            this.xemĐiểmTheoMônToolStripMenuItem.Text = "Theo Môn";
-            // 
             // menuStrip3
             // 
             this.menuStrip3.Dock = System.Windows.Forms.DockStyle.None;
@@ -209,46 +164,46 @@
             // 
             this.mn_addL.ForeColor = System.Drawing.Color.Red;
             this.mn_addL.Name = "mn_addL";
-            this.mn_addL.Size = new System.Drawing.Size(162, 26);
+            this.mn_addL.Size = new System.Drawing.Size(180, 26);
             this.mn_addL.Text = "Lớp";
             this.mn_addL.Click += new System.EventHandler(this.mn_addL_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(159, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
             // 
             // mn_addM
             // 
             this.mn_addM.ForeColor = System.Drawing.Color.Red;
             this.mn_addM.Name = "mn_addM";
-            this.mn_addM.Size = new System.Drawing.Size(162, 26);
+            this.mn_addM.Size = new System.Drawing.Size(180, 26);
             this.mn_addM.Text = "Môn";
             this.mn_addM.Click += new System.EventHandler(this.mn_addM_Click_1);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(159, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(177, 6);
             // 
             // mn_addSV
             // 
             this.mn_addSV.ForeColor = System.Drawing.Color.Red;
             this.mn_addSV.Name = "mn_addSV";
-            this.mn_addSV.Size = new System.Drawing.Size(162, 26);
+            this.mn_addSV.Size = new System.Drawing.Size(180, 26);
             this.mn_addSV.Text = "Sinh Viên";
             this.mn_addSV.Click += new System.EventHandler(this.mn_addSV_Click);
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(159, 6);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(177, 6);
             // 
             // mn_addGv
             // 
             this.mn_addGv.ForeColor = System.Drawing.Color.Red;
             this.mn_addGv.Name = "mn_addGv";
-            this.mn_addGv.Size = new System.Drawing.Size(162, 26);
+            this.mn_addGv.Size = new System.Drawing.Size(180, 26);
             this.mn_addGv.Text = "Giảng Viên";
             this.mn_addGv.Click += new System.EventHandler(this.mn_addGV_Click);
             // 
@@ -308,14 +263,33 @@
             this.pbLogo.TabIndex = 5;
             this.pbLogo.TabStop = false;
             // 
+            // menuStrip2
+            // 
+            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xemBảngĐiểmToolStripMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(9, 251);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(153, 29);
+            this.menuStrip2.TabIndex = 9;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // xemBảngĐiểmToolStripMenuItem
+            // 
+            this.xemBảngĐiểmToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xemBảngĐiểmToolStripMenuItem.Name = "xemBảngĐiểmToolStripMenuItem";
+            this.xemBảngĐiểmToolStripMenuItem.Size = new System.Drawing.Size(145, 25);
+            this.xemBảngĐiểmToolStripMenuItem.Text = "Xem Bảng Điểm";
+            this.xemBảngĐiểmToolStripMenuItem.Click += new System.EventHandler(this.mn_xemDiem_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 474);
-            this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.menuStrip3);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_logout);
             this.Controls.Add(this.tb_del);
@@ -332,11 +306,11 @@
             this.Load += new System.EventHandler(this.AdminForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,11 +326,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem xemĐiểmToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xemĐiểmTheoLớpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem xemĐiểmTheoMônToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mn_addL;
@@ -371,5 +340,7 @@
         private System.Windows.Forms.Label lb_dhnamcantho;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem xemBảngĐiểmToolStripMenuItem;
     }
 }

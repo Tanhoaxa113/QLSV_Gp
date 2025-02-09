@@ -91,7 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 409);
+            this.ClientSize = new System.Drawing.Size(613, 404);
             this.Controls.Add(this.btn_find);
             this.Controls.Add(this.txt_find);
             this.Controls.Add(this.dgv_lop);

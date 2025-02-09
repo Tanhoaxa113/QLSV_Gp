@@ -104,6 +104,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddD.Designer.cs">
+      <DependentUpon>AddD.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddGV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,11 +218,23 @@
     <Compile Include="ListM.Designer.cs">
       <DependentUpon>ListM.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListPoint.Designer.cs">
+      <DependentUpon>ListPoint.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListSV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListSV.Designer.cs">
       <DependentUpon>ListSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Picker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Picker.Designer.cs">
+      <DependentUpon>Picker.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -231,6 +249,9 @@
     <Compile Include="UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddD.resx">
+      <DependentUpon>AddD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddGV.resx">
       <DependentUpon>AddGV.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,8 +306,14 @@
     <EmbeddedResource Include="ListM.resx">
       <DependentUpon>ListM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListPoint.resx">
+      <DependentUpon>ListPoint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListSV.resx">
       <DependentUpon>ListSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Picker.resx">
+      <DependentUpon>Picker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -86,7 +86,7 @@ namespace QLSV_Gp
             if (result == DialogResult.Yes)
             {
                 // Ẩn form hiện tại
-                this.Hide();
+                this.Close();
 
                 // Hiển thị form HomePage
                 HomePage homePage = new HomePage();
@@ -104,6 +104,17 @@ namespace QLSV_Gp
         {
             ChangePassword changePassword = new ChangePassword(MaGV);// Truyền MaGV cho ChangePassword
             changePassword.ShowDialog();
+        }
+
+        private void mn_nhapDiem_Click(object sender, EventArgs e)
+        {
+            AddD addD = new AddD(MaGV);// Truyền MaGV cho AddD
+            addD.ShowDialog();
+        }
+
+        private void mn_xemDiem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

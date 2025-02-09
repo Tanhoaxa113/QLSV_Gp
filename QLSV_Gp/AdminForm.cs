@@ -83,5 +83,11 @@ namespace QLSV_Gp
             ListM listM = new ListM();
             listM.ShowDialog();
         }
+
+        private void mn_xemDiem_Click(object sender, EventArgs e)
+        {
+            Picker pointView = new Picker();
+            pointView.ShowDialog();
+        }
     }
 }

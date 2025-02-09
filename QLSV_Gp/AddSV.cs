@@ -171,6 +171,7 @@ namespace QLSV_Gp
                     if (savedRowCount > 0)
                     {
                         MessageBox.Show($"Đã lưu thành công {savedRowCount} sinh viên.");
+                        this.Close();
                     }
                     else
                     {
